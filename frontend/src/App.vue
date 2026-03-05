@@ -13,10 +13,11 @@ const isAuthenticated = computed(() => !!auth?.token)
 function logout() {
   localStorage.removeItem('access_token')
   localStorage.removeItem('user')
-  if (!auth) return
-  auth.token = null
-  auth.user = null
-  router.push({ name: 'login' })
+  if (auth) {
+    auth.token = null
+    auth.user = null
+  }
+  router.push('/login')
 }
 </script>
 

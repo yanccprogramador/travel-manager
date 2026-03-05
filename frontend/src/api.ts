@@ -1,3 +1,5 @@
+import router from './router'
+
 export interface LoginResponseUser {
   id: number
   name: string
@@ -57,7 +59,16 @@ async function request<T>(path: string, options: RequestInit = {}): Promise<T> {
   const hasJson = contentType.includes('application/json')
   const data = (hasJson ? await response.json() : null) as T | null
 
+
   if (!response.ok) {
+    if (response.status === 401) {
+      localStorage.removeItem('access_token')
+      localStorage.removeItem('user')
+      if (router.currentRoute.value.name !== 'login') {
+        router.push('/login')
+      }
+    }
+
     const message = (data && (data as any).message) || 'Ocorreu um erro na requisição.'
     throw new Error(message)
   }
