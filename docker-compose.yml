@@ -4,7 +4,6 @@ services:
   backend:
     build:
       context: ./backend
-    container_name: travel-backend
     working_dir: /var/www/html
     volumes:
       - ./backend:/var/www/html
@@ -15,7 +14,6 @@ services:
   frontend:
     build:
       context: ./frontend
-    container_name: travel-frontend
     working_dir: /usr/src/app
     volumes:
       - ./frontend:/usr/src/app

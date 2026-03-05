@@ -83,13 +83,17 @@ Aplicação **Full Stack** para gerenciar pedidos de viagem corporativa, compost
   - Docker e Docker Compose instalados.
 
 - **Passos**
-  - Na raiz do projeto (`onfly`), execute:
+  - Na pasta `backend`:
+    - Copiar `.env.example` para `.env` e garantir `DB_CONNECTION=sqlite`.
+  - Na pasta `frontend`:
+    - Copiar `.env.example` para `.env` e garantir `VITE_API_BASE_URL=http://localhost:8000/api`.
+  - Na raiz do projeto, execute:
     - `docker compose build`
     - `docker compose up`
   - Serviços:
     - Backend Laravel: `http://localhost:8000`
     - Frontend Vue (Vite): `http://localhost:5173`
-  - O frontend já está configurado para enviar chamadas de `/api` para o serviço `backend` via variável `BACKEND_URL`.
+  - O frontend já está configurado para enviar chamadas de `/api` para o serviço `backend` via variável `VITE_API_BASE_URL`.
 
 ### Como rodar localmente (sem Docker)
 
@@ -107,6 +111,4 @@ Aplicação **Full Stack** para gerenciar pedidos de viagem corporativa, compost
   - Na pasta `frontend`:
     - `npm install`
     - `npm run dev -- --host 0.0.0.0 --port 5173`
-  - Em desenvolvimento, o Vite faz proxy de `/api` para o backend configurado via `BACKEND_URL` (por padrão `http://backend:8000` em Docker ou `http://localhost:8000` localmente).
-
-
+  - Em desenvolvimento, o Vite faz proxy de `/api` para o backend configurado via `VITE_API_BASE_URL` (por padrão `http://backend:8000` em Docker ou `http://localhost:8000` localmente).
