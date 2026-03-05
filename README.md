@@ -111,4 +111,4 @@ Aplicação **Full Stack** para gerenciar pedidos de viagem corporativa, compost
   - Na pasta `frontend`:
     - `npm install`
     - `npm run dev -- --host 0.0.0.0 --port 5173`
-  - Em desenvolvimento, o Vite faz proxy de `/api` para o backend configurado via `VITE_API_BASE_URL` (por padrão `http://backend:8000` em Docker ou `http://localhost:8000` localmente).
+  - Em desenvolvimento, o Vite faz proxy de `/api` para o backend configurado via `VITE_API_BASE_URL` (`http://localhost:8000/api`).
