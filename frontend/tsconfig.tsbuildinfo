@@ -1,0 +1,1 @@
+{"root":["./src/api.ts","./src/env.d.ts","./src/main.ts","./src/router.ts","./src/tests/DashboardView.spec.ts","./src/tests/LoginView.spec.ts","./src/App.vue","./src/components/NotificationBell.vue","./src/components/TravelRequestForm.vue","./src/components/TravelRequestTable.vue","./src/views/DashboardView.vue","./src/views/LoginView.vue"],"version":"5.9.3"}
